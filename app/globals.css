@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ─────────────────────────────────────────────────────────────
+ *  APPDEEN AI — BRAND TOKENS  (single source of truth)
+ * ─────────────────────────────────────────────────────────────
+ *  Colors are stored as space-separated RGB channels so Tailwind
+ *  can apply opacity (`text-brand/60`). To match the real Appdeen
+ *  AI palette, replace the three channel numbers on each line.
+ * ─────────────────────────────────────────────────────────────
+ */
+:root {
+  /* Surfaces */
+  --canvas: 251 251 249; /* #FBFBF9 warm off-white page */
+  --surface: 255 255 255; /* #FFFFFF cards */
+  --elevated: 255 255 255;
+  --ink: 12 13 22; /* #0C0D16 near-black bands */
+  --ink-soft: 22 23 36; /* #161724 */
+
+  /* Text */
+  --heading: 15 16 28; /* #0F101C */
+  --body: 60 63 82; /* #3C3F52 */
+  --muted: 106 110 130; /* #6A6E82 */
+  --faint: 150 154 170; /* #969AAA */
+
+  /* Brand — iris / violet (platform, build, trust) */
+  --brand: 92 72 246; /* #5C48F6 */
+  --brand-soft: 238 236 254; /* #EEECFE tint */
+  --brand-ink: 43 30 138; /* deep violet text on tint */
+
+  /* Work-hours — warm amber (energy, time, effort) */
+  --hours: 240 158 40; /* #F09E28 */
+  --hours-soft: 254 244 227; /* #FEF4E3 */
+
+  /* Active / ready status — emerald */
+  --active: 22 163 110; /* #16A36E */
+  --active-soft: 224 245 236; /* #E0F5EC */
+
+  /* Hairlines */
+  --line: 232 231 227; /* #E8E7E3 */
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji",
+    "Segoe UI Emoji", sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--line));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--canvas));
+    color: rgb(var(--body));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: rgb(var(--heading));
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: rgb(var(--brand) / 0.16);
+    color: rgb(var(--heading));
+  }
+}
+
+@layer components {
+  /* Layout container */
+  .container-x {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+
+  /* Eyebrow / section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand;
+  }
+
+  /* Fluid display type */
+  .display-1 {
+    font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 650;
+  }
+  .display-2 {
+    font-size: clamp(2rem, 3.8vw, 3.1rem);
+    line-height: 1.06;
+    letter-spacing: -0.028em;
+    font-weight: 600;
+  }
+
+  /* Card base */
+  .card {
+    @apply rounded-3xl border border-line bg-surface shadow-soft;
+  }
+
+  /* Hairline chip */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted;
+  }
+
+  /* Gradient-free "brand glow" text for the dark hero */
+  .on-ink {
+    color: rgb(var(--canvas));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* subtle dotted grid used on dark bands */
+  .bg-dotgrid {
+    background-image: radial-gradient(
+      rgb(255 255 255 / 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+  .bg-dotgrid-ink {
+    background-image: radial-gradient(
+      rgb(var(--ink) / 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+}
