@@ -31,7 +31,7 @@ export function MarketplaceGrid() {
                 "rounded-full px-4 py-2 text-sm font-medium transition-all",
                 active === cat
                   ? "bg-ink text-white shadow-soft"
-                  : "text-body hover:bg-white/[0.06] hover:text-heading"
+                  : "text-body hover:bg-ink/[0.05] hover:text-heading"
               )}
             >
               {cat}

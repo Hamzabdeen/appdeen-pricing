@@ -21,6 +21,9 @@ const map: Record<string, (p: { className?: string }) => JSX.Element> = {
   sparkle: Icons.Sparkle,
   check: Icons.Check,
   star: Icons.Star,
+  gauge: Icons.Gauge,
+  upload: Icons.Upload,
+  pause: Icons.Pause,
 };
 
 export function DynamicIcon({

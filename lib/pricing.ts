@@ -2,18 +2,29 @@
  * ─────────────────────────────────────────────────────────────
  *  APPDEEN AI — PRICING CONFIG  (edit everything here)
  * ─────────────────────────────────────────────────────────────
- *  This file is the single source of truth for pricing. Change a
- *  number or a label here and it updates everywhere on the site.
+ *  Single source of truth for pricing. Change a number or a label
+ *  here and it updates everywhere on the site.
  *
  *  Prices are intentionally flexible:
- *   - `price: 10`          → renders "$10"
- *   - `price: null`        → renders `priceLabel` instead (e.g. "Custom")
+ *   - `price: 49`     → renders "$49"
+ *   - `price: null`   → renders `priceLabel` instead (e.g. "Coming soon")
+ *
+ *  To ship real prices, drop numbers into `price` below. Reference
+ *  values you might use: Starter 49 · Growth 119 · Business 249 ·
+ *  Scale 449 · Pay-as-you-go per-minute.
  * ─────────────────────────────────────────────────────────────
  */
 
 export const CURRENCY = "$";
 
-/** The employee slot — required for every AI employee. */
+/** Free-trial framing shown across the site. */
+export const TRIAL = {
+  days: 14,
+  label: "14-day free workforce",
+  short: "14-day trial",
+};
+
+/** The employee slot — required for every active AI employee. */
 export const EMPLOYEE_SLOT = {
   price: 10,
   period: "/month",
@@ -22,109 +33,97 @@ export const EMPLOYEE_SLOT = {
   tagline: "Required for every AI employee",
 };
 
-export type HourPackage = {
+/** Mr. AppDeen — the AI workforce manager persona. */
+export const MR_APPDEEN = {
+  name: "Mr. AppDeen",
+  role: "Your AI workforce manager",
+  blurb:
+    "Need help building your workforce? Mr. AppDeen will design the right team for you.",
+  cta: "Talk to Mr. AppDeen",
+};
+
+export type CapacityPlan = {
   id: string;
   name: string;
+  /** big hero number, e.g. "1h" or "PAYG" */
+  hoursLabel: string;
   hoursPerDay: number | null;
-  /** monthly price in currency units, or null to show `priceLabel` */
+  icon: string;
   price: number | null;
   priceLabel?: string;
-  period: string;
-  headline: string;
-  description: string;
-  bestFor: string;
-  features: string[];
-  ctaLabel: string;
-  ctaHref: string;
+  priceUnit: string;
+  tagline: string;
   featured?: boolean;
   badge?: string;
 };
 
-/** The 3 shared work-hour packages + Enterprise. */
-export const HOUR_PACKAGES: HourPackage[] = [
+/** The "Only pay for work" working-capacity table. */
+export const CAPACITY_PLANS: CapacityPlan[] = [
   {
     id: "starter",
     name: "Starter",
+    hoursLabel: "1h",
     hoursPerDay: 1,
+    icon: "clock",
     price: null,
     priceLabel: "Coming soon",
-    period: "/month",
-    headline: "1 work hour / day",
-    description: "A focused hour of AI work every day, shared across your team.",
-    bestFor: "Solo founders & first AI hire",
-    features: [
-      "≈ 30 shared work hours / month",
-      "Shared across all AI employees",
-      "Rollover of unused hours",
-      "Email + chat support",
-    ],
-    ctaLabel: "Choose Starter",
-    ctaHref: "/employees",
+    priceUnit: "/ month",
+    tagline: "Perfect for trying out and small tasks.",
   },
   {
     id: "growth",
     name: "Growth",
+    hoursLabel: "3h",
     hoursPerDay: 3,
+    icon: "clock",
     price: null,
     priceLabel: "Coming soon",
-    period: "/month",
-    headline: "3 work hours / day",
-    description: "Enough hours to keep a small AI team busy on real work daily.",
-    bestFor: "Growing teams running 2–4 employees",
-    features: [
-      "≈ 90 shared work hours / month",
-      "Shared across all AI employees",
-      "Rollover of unused hours",
-      "Priority task queue",
-      "Usage insights dashboard",
-    ],
-    ctaLabel: "Choose Growth",
-    ctaHref: "/employees",
+    priceUnit: "/ month",
+    tagline: "Great for startups and growing teams.",
+  },
+  {
+    id: "business",
+    name: "Business",
+    hoursLabel: "8h",
+    hoursPerDay: 8,
+    icon: "clock",
+    price: null,
+    priceLabel: "Coming soon",
+    priceUnit: "/ month",
+    tagline: "Like hiring one full-time AI employee.",
     featured: true,
     badge: "Most popular",
   },
   {
-    id: "full-time",
-    name: "Full-Time",
-    hoursPerDay: 8,
+    id: "scale",
+    name: "Scale",
+    hoursLabel: "16h",
+    hoursPerDay: 16,
+    icon: "clock",
     price: null,
     priceLabel: "Coming soon",
-    period: "/month",
-    headline: "8 work hours / day",
-    description: "A full working day of AI effort — like a full-time hire, shared.",
-    bestFor: "Busy departments & scaling companies",
-    features: [
-      "≈ 240 shared work hours / month",
-      "Shared across all AI employees",
-      "Rollover of unused hours",
-      "Priority task queue",
-      "Usage insights dashboard",
-      "Dedicated onboarding",
-    ],
-    ctaLabel: "Choose Full-Time",
-    ctaHref: "/employees",
+    priceUnit: "/ month",
+    tagline: "Power multiple employees and projects.",
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
+    id: "payg",
+    name: "Pay as you go",
+    hoursLabel: "PAYG",
     hoursPerDay: null,
+    icon: "gauge",
     price: null,
-    priceLabel: "Custom",
-    period: "",
-    headline: "Custom hours",
-    description: "Unlimited scale, custom hour pools, and security for large teams.",
-    bestFor: "Companies with many AI employees",
-    features: [
-      "Custom shared hour pools",
-      "Unlimited AI employees",
-      "SSO, SAML & audit logs",
-      "Custom integrations & tools",
-      "Dedicated success manager",
-      "SLA & premium support",
-    ],
-    ctaLabel: "Contact sales",
-    ctaHref: "/pricing#enterprise",
+    priceLabel: "Usage-based",
+    priceUnit: "no commitment",
+    tagline: "Use only what you need — perfect for unpredictable work.",
   },
+];
+
+/** Reassurance row under the capacity table. */
+export const CAPACITY_PERKS = [
+  { icon: "pause", label: "Pause or upgrade anytime" },
+  { icon: "refresh", label: "Unused hours roll over" },
+  { icon: "shield", label: "Secure & private" },
+  { icon: "cube", label: "Isolated workspaces" },
 ];
 
 /** The 3-layer pricing model shown in the explainer. */
@@ -184,7 +183,7 @@ export const HOW_IT_WORKS = [
     icon: "clock",
     title: "Buy work hours for your workforce",
     description:
-      "Pick a shared hour package — Starter, Growth, or Full-Time. Every AI employee draws from the same pool of hours.",
+      "Pick a shared daily capacity — 1, 3, 8 or 16 hours a day. Every AI employee draws from the same pool of hours.",
   },
   {
     step: 4,
@@ -194,6 +193,18 @@ export const HOW_IT_WORKS = [
       "Assign a task and your employees get to work. Hours are deducted only while they’re actually performing work — never while idle.",
   },
 ];
+
+/** The custom-employee builder mockup content. */
+export const BUILDER = {
+  steps: ["Knowledge", "Role & Skills", "Goals", "Personality", "Permissions", "Review"],
+  sources: [
+    { name: "Google Drive", icon: "drive" },
+    { name: "Dropbox", icon: "dropbox" },
+    { name: "Notion", icon: "notion" },
+    { name: "Confluence", icon: "confluence" },
+  ],
+  checklist: ["Knowledge uploaded", "Role defined", "Skills set", "Ready to work"],
+};
 
 /** The worked example: two employees, five hours. */
 export const WORKED_EXAMPLE = {
@@ -210,31 +221,39 @@ export type Faq = { q: string; a: string };
 
 export const PRICING_FAQS: Faq[] = [
   {
+    q: `What’s included in the ${TRIAL.short}?`,
+    a: `Every official AppDeen employee is available to try during your ${TRIAL.label}. Add them to your workforce, hand over real tasks, and see the work before you commit to anyone. No charge for the first ${TRIAL.days} days.`,
+  },
+  {
     q: "What is an employee slot?",
-    a: `An employee slot is the seat that holds an AI employee on your team. It costs ${CURRENCY}${EMPLOYEE_SLOT.price}/month per employee. Without an available slot, you can’t build or activate an AI employee — think of it as their spot on the payroll.`,
+    a: `An employee slot is the seat that holds an AI employee on your team. It costs ${CURRENCY}${EMPLOYEE_SLOT.price}/month per employee. Without an available slot, you can’t activate an AI employee — think of it as their spot on the payroll.`,
   },
   {
-    q: "Do I pay for every AI employee?",
-    a: `Yes — each active AI employee needs its own ${CURRENCY}${EMPLOYEE_SLOT.price}/month slot, plus access (either built by you or an unlocked ready-made employee). Work hours, however, are shared across your whole workforce from a single package.`,
+    q: "Can multiple employees share capacity?",
+    a: "Yes — that’s the whole idea. You buy one shared pool of daily work hours and every AI employee draws from it. Whether you run 1 or 20 employees, you only manage a single balance.",
   },
   {
-    q: "Are work hours shared between all employees?",
-    a: "Completely. You buy one shared pool of hours for your company. Whether you have 1 or 20 AI employees, they all draw from the same pool — so you only ever manage one balance.",
+    q: "What happens if I run out of capacity?",
+    a: "Your AI employees simply pause until your hours renew or you upgrade. Nothing is lost — bump up your plan anytime and they pick up right where they left off. No surprise overages.",
   },
   {
-    q: "What happens if I run out of work hours?",
-    a: "Your AI employees simply pause until you top up or your monthly hours renew. Nothing is lost — assign more hours anytime and they pick up right where they left off. No surprise overages.",
+    q: "Do unused hours roll over?",
+    a: "Yes. Any hours you don’t use roll over so nothing goes to waste. You’re always paying for real work, not idle time.",
   },
   {
-    q: "Can I build my own employee?",
-    a: "Yes. Add a slot and build a fully custom AI employee shaped around your business — its role, skills, tone, and the tools it can use. It draws from the same shared work hours as everyone else.",
+    q: "Can my employees work 24/7?",
+    a: "Absolutely. AI employees are available around the clock. Your daily capacity controls how many hours of actual work they perform — but they never clock out.",
   },
   {
-    q: "Can I unlock ready-made employees?",
-    a: "Absolutely. AppDeen ships with ready-to-use employees like Sarah (Sales) and Omar (Support). Unlock one, give it a slot, and it’s working the same day. Ready-made access is priced from a fixed monthly amount.",
+    q: "Can I build my own AI employee?",
+    a: "Yes. Add a slot and build a fully custom employee shaped around your business — upload your knowledge, define its role, skills, and personality, and connect the tools it can use.",
   },
   {
-    q: "Is this the same as tokens?",
-    a: "No. AppDeen sells work hours, not tokens. You never think about tokens, credits, or usage math. You buy hours — the same way you’d think about a real employee’s time — and hours are only used when work actually gets done.",
+    q: "Can I pay only for usage?",
+    a: "Yes — choose Pay as you go and you’re only billed for the work your employees actually do. Perfect for occasional or unpredictable workloads, with no monthly commitment.",
+  },
+  {
+    q: "Can I pause or downgrade anytime?",
+    a: "Anytime. Pause, upgrade, or downgrade your capacity whenever you like — changes apply immediately and there are no long contracts.",
   },
 ];

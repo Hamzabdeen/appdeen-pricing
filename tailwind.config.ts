@@ -63,11 +63,11 @@ const config: Config = {
         "4xl": "2.25rem",
       },
       boxShadow: {
-        soft: "0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5)",
-        card: "0 1px 2px rgba(0,0,0,0.35), 0 18px 44px -18px rgba(0,0,0,0.7)",
-        lift: "0 2px 6px rgba(0,0,0,0.4), 0 34px 70px -22px rgba(0,0,0,0.8)",
-        glow: "0 18px 50px -14px rgb(var(--brand) / 0.55)",
-        "glow-sm": "0 8px 26px -8px rgb(var(--brand) / 0.6)",
+        soft: "0 1px 2px rgba(16,24,40,0.04), 0 4px 14px -4px rgba(16,24,40,0.06)",
+        card: "0 1px 3px rgba(16,24,40,0.05), 0 14px 38px -14px rgba(16,24,40,0.16)",
+        lift: "0 2px 6px rgba(16,24,40,0.06), 0 30px 64px -22px rgba(16,24,40,0.26)",
+        glow: "0 16px 44px -14px rgb(var(--brand) / 0.5)",
+        "glow-sm": "0 8px 22px -8px rgb(var(--brand) / 0.55)",
       },
       maxWidth: {
         content: "76rem",

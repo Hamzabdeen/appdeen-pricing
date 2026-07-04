@@ -22,7 +22,7 @@ export function EmployeeCard({
         className
       )}
     >
-      <span className="pointer-events-none absolute inset-0 bg-blueprint opacity-[0.35]" />
+      <span className="pointer-events-none absolute inset-0 bg-blueprint opacity-[0.5]" />
       <Corners className="opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       {/* accent wash */}
       <span
@@ -51,12 +51,12 @@ export function EmployeeCard({
         {employee.skills.slice(0, 3).map((s) => (
           <span
             key={s.title}
-            className="rounded-full border border-line bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-body"
+            className="rounded-full border border-line bg-canvas px-2.5 py-1 text-xs font-medium text-body"
           >
             {s.title}
           </span>
         ))}
-        <span className="rounded-full border border-line bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-faint">
+        <span className="rounded-full border border-line bg-canvas px-2.5 py-1 text-xs font-medium text-faint">
           +{employee.skills.length - 3} more
         </span>
       </div>

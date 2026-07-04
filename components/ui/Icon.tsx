@@ -215,6 +215,24 @@ export function ChevronDown({ className, strokeWidth = 1.9 }: IconProps) {
   );
 }
 
+export function Gauge({ className, strokeWidth = 1.7 }: IconProps) {
+  return (
+    <svg {...common} strokeWidth={strokeWidth} className={base(className)} aria-hidden>
+      <path d="M4 18a8 8 0 1 1 16 0" />
+      <path d="M12 18l4-5" />
+      <circle cx="12" cy="18" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function Upload({ className, strokeWidth = 1.7 }: IconProps) {
+  return (
+    <svg {...common} strokeWidth={strokeWidth} className={base(className)} aria-hidden>
+      <path d="M12 15V4M8 8l4-4 4 4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" />
+    </svg>
+  );
+}
+
 export function Star({ className, strokeWidth = 1.7 }: IconProps) {
   return (
     <svg {...common} strokeWidth={strokeWidth} className={base(className)} aria-hidden>

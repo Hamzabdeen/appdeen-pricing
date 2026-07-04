@@ -8,9 +8,9 @@ const variants: Record<Variant, string> = {
   primary:
     "bg-gradient-brand text-white shadow-glow-sm ring-1 ring-inset ring-white/15 hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0",
   secondary:
-    "bg-white/[0.04] text-heading border border-line hover:border-brand/50 hover:bg-white/[0.07] hover:-translate-y-0.5 backdrop-blur",
+    "bg-surface text-heading border border-line shadow-soft hover:border-brand/40 hover:bg-brand-soft/50 hover:-translate-y-0.5",
   ghost:
-    "text-body hover:bg-white/[0.06] hover:text-heading",
+    "text-body hover:bg-ink/[0.05] hover:text-heading",
   onInk:
     "bg-white text-ink hover:bg-white/90 hover:-translate-y-0.5",
   onInkGhost:

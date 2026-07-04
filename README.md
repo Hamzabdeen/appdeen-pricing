@@ -11,7 +11,7 @@ Built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
 | Route | What it is |
 | --- | --- |
 | `/` | Landing page that connects the whole flow |
-| `/pricing` | The pricing story: 3-layer model, 4-step flow, work-hour packages, worked example, FAQ |
+| `/pricing` | Full pricing story: Start-free hero + Mr. AppDeen, "One trial" showcase, 3-layer model, 4-step flow, working-capacity table, worked example, custom-employee builder, enterprise, 3-column FAQ, final CTA |
 | `/employees` | AI employee marketplace with category filter |
 | `/employees/[slug]` | Full AI employee profile (e.g. `/employees/sarah`) |
 
@@ -29,8 +29,10 @@ Every AI employee is assembled from three simple layers:
 
 - **Prices, packages, steps & FAQs** → [`lib/pricing.ts`](lib/pricing.ts)
   Change a number or a label in one place and it updates across the site.
-  Prices support real values (`price: 10` → `$10`) or placeholders
-  (`price: null` + `priceLabel: "Coming soon" / "Custom"`).
+  Prices support real values (`price: 49` → `$49`) or placeholders
+  (`price: null` + `priceLabel: "Coming soon" / "Custom"`). Capacity tiers,
+  the 14-day trial, the Mr. AppDeen persona, and the builder steps all live
+  here too.
 - **AI employees (mock data)** → [`lib/employees.ts`](lib/employees.ts)
   Add or edit employees; the marketplace, profiles, and related sections
   update automatically. Swap for a real API later.
@@ -43,17 +45,20 @@ The entire palette is driven by CSS variables in **one place**:
 component edits required. Radii, shadows, and fonts live in
 [`tailwind.config.ts`](tailwind.config.ts).
 
-> The palette is tuned to the live AppDeen AI identity: a deep navy-black
-> canvas with an electric-blue gradient accent (`--brand`), the floating pill
-> navbar, corner-bracket card frames, and glow. Adjust the `--brand-*` channels
-> to fine-tune the exact blue.
+> The theme is light with deep-navy feature bands and an electric-blue
+> gradient accent (`--brand`), matching the AppDeen AI identity. Adjust the
+> `--brand-*` channels to fine-tune the exact blue, or flip the surface/text
+> channels to go fully dark.
 
 ## Reusable components
 
-- `components/pricing/PricingCard.tsx` — work-hour package card
+- `components/pricing/CapacityCard.tsx` — working-capacity plan card
+- `components/pricing/CapacityPlans.tsx` — the capacity pricing table
+- `components/pricing/FaqGrid.tsx` — 3-column FAQ accordion
+- `components/pricing/MrAppdeen.tsx` — Mr. AppDeen avatar + help band
 - `components/employees/EmployeeCard.tsx` — AI employee card
-- `components/pricing/Faq.tsx` — accordion FAQ
-- `components/ui/*` — Button, Avatar, StatusPill, SectionHeader, Reveal, icons
+- `components/ui/*` — Button, Avatar, StatusPill, SectionHeader, Reveal,
+  Corners (bracket frames), icons
 
 ## Run locally
 

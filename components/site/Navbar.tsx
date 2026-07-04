@@ -38,18 +38,18 @@ export function Navbar() {
           className={cn(
             "pointer-events-auto mx-auto flex h-14 items-center justify-between gap-4 rounded-full border px-3 pl-4 transition-all duration-300 sm:h-16 sm:pl-6",
             scrolled
-              ? "border-white/10 bg-ink-soft/80 shadow-lift backdrop-blur-xl"
-              : "border-white/[0.07] bg-ink-soft/50 backdrop-blur-xl"
+              ? "border-line bg-surface/85 shadow-card backdrop-blur-xl"
+              : "border-line/70 bg-surface/65 backdrop-blur-xl"
           )}
         >
-          <Logo />
+          <Logo onInk={false} />
 
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-body transition-colors hover:bg-white/[0.06] hover:text-white"
+                className="rounded-full px-3.5 py-2 text-sm font-medium text-body transition-colors hover:bg-ink/[0.05] hover:text-heading"
               >
                 {l.label}
               </Link>
@@ -59,7 +59,7 @@ export function Navbar() {
           <div className="hidden items-center gap-2 md:flex">
             <Link
               href="/employees"
-              className="rounded-full px-3 py-2 text-sm font-medium text-body transition-colors hover:text-white"
+              className="rounded-full px-3 py-2 text-sm font-medium text-body transition-colors hover:text-heading"
             >
               Sign in
             </Link>
@@ -75,12 +75,12 @@ export function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface md:hidden"
           >
             <span className="relative block h-4 w-5">
-              <span className={cn("absolute left-0 top-0 h-0.5 w-5 rounded-full bg-white transition-all", open && "top-1.5 rotate-45")} />
-              <span className={cn("absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-white transition-all", open && "opacity-0")} />
-              <span className={cn("absolute left-0 top-3 h-0.5 w-5 rounded-full bg-white transition-all", open && "top-1.5 -rotate-45")} />
+              <span className={cn("absolute left-0 top-0 h-0.5 w-5 rounded-full bg-heading transition-all", open && "top-1.5 rotate-45")} />
+              <span className={cn("absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-heading transition-all", open && "opacity-0")} />
+              <span className={cn("absolute left-0 top-3 h-0.5 w-5 rounded-full bg-heading transition-all", open && "top-1.5 -rotate-45")} />
             </span>
           </button>
         </div>
@@ -88,7 +88,7 @@ export function Navbar() {
         {/* Mobile panel */}
         <div
           className={cn(
-            "pointer-events-auto mx-auto mt-2 overflow-hidden rounded-3xl border border-white/10 bg-ink-soft/95 backdrop-blur-xl transition-all duration-300 md:hidden",
+            "pointer-events-auto mx-auto mt-2 overflow-hidden rounded-3xl border border-line bg-surface/95 shadow-card backdrop-blur-xl transition-all duration-300 md:hidden",
             open ? "max-h-[80vh] opacity-100" : "max-h-0 border-transparent opacity-0"
           )}
         >
@@ -98,7 +98,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-white hover:bg-white/[0.06]"
+                className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-heading hover:bg-ink/[0.05]"
               >
                 {l.label}
                 <ChevronDown className="h-4 w-4 -rotate-90 text-faint" />
