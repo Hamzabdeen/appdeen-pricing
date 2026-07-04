@@ -149,7 +149,7 @@ export const PRICING_LAYERS = [
     price: "Build or Unlock",
     priceSuffix: "your choice",
     description:
-      "Build your own custom AI employee from scratch, or unlock a ready-to-use Appdeen employee. Ready-made access starts from a fixed monthly price.",
+      "Build your own custom AI employee from scratch, or unlock a ready-to-use AppDeen employee. Ready-made access starts from a fixed monthly price.",
   },
   {
     id: "hours",
@@ -171,7 +171,7 @@ export const HOW_IT_WORKS = [
     icon: "cube",
     title: "Choose or build your AI employee",
     description:
-      "Unlock a ready-to-use Appdeen employee like Sarah from Sales, or build your own from scratch — tailored to how your company works.",
+      "Unlock a ready-to-use AppDeen employee like Sarah from Sales, or build your own from scratch — tailored to how your company works.",
   },
   {
     step: 2,
@@ -198,8 +198,8 @@ export const HOW_IT_WORKS = [
 /** The worked example: two employees, five hours. */
 export const WORKED_EXAMPLE = {
   employees: [
-    { name: "Sarah", role: "AI Sales Employee", hours: 3, accent: "#5C48F6" },
-    { name: "Omar", role: "AI Support Employee", hours: 2, accent: "#0EA5A5" },
+    { name: "Sarah", role: "AI Sales Employee", hours: 3, accent: "#3C8EFF" },
+    { name: "Omar", role: "AI Support Employee", hours: 2, accent: "#22D3EE" },
   ],
   get total() {
     return this.employees.reduce((sum, e) => sum + e.hours, 0);
@@ -231,10 +231,10 @@ export const PRICING_FAQS: Faq[] = [
   },
   {
     q: "Can I unlock ready-made employees?",
-    a: "Absolutely. Appdeen ships with ready-to-use employees like Sarah (Sales) and Omar (Support). Unlock one, give it a slot, and it’s working the same day. Ready-made access is priced from a fixed monthly amount.",
+    a: "Absolutely. AppDeen ships with ready-to-use employees like Sarah (Sales) and Omar (Support). Unlock one, give it a slot, and it’s working the same day. Ready-made access is priced from a fixed monthly amount.",
   },
   {
     q: "Is this the same as tokens?",
-    a: "No. Appdeen sells work hours, not tokens. You never think about tokens, credits, or usage math. You buy hours — the same way you’d think about a real employee’s time — and hours are only used when work actually gets done.",
+    a: "No. AppDeen sells work hours, not tokens. You never think about tokens, credits, or usage math. You buy hours — the same way you’d think about a real employee’s time — and hours are only used when work actually gets done.",
   },
 ];

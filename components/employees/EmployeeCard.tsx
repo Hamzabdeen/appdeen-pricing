@@ -3,6 +3,7 @@ import { type Employee } from "@/lib/employees";
 import { Avatar } from "@/components/ui/Avatar";
 import { ArrowRight, Star, Clock } from "@/components/ui/Icon";
 import { StatusPill } from "@/components/ui/StatusPill";
+import { Corners } from "@/components/ui/Corners";
 import { cn } from "@/lib/utils";
 
 /** Reusable AI-employee card for the marketplace and related sections. */
@@ -17,13 +18,15 @@ export function EmployeeCard({
     <Link
       href={`/employees/${employee.slug}`}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-card",
+        "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-card",
         className
       )}
     >
+      <span className="pointer-events-none absolute inset-0 bg-blueprint opacity-[0.35]" />
+      <Corners className="opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       {/* accent wash */}
       <span
-        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30"
         style={{ background: employee.accent }}
       />
 
@@ -48,12 +51,12 @@ export function EmployeeCard({
         {employee.skills.slice(0, 3).map((s) => (
           <span
             key={s.title}
-            className="rounded-full bg-canvas px-2.5 py-1 text-xs font-medium text-body"
+            className="rounded-full border border-line bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-body"
           >
             {s.title}
           </span>
         ))}
-        <span className="rounded-full bg-canvas px-2.5 py-1 text-xs font-medium text-faint">
+        <span className="rounded-full border border-line bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-faint">
           +{employee.skills.length - 3} more
         </span>
       </div>

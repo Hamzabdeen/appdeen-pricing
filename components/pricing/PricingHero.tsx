@@ -23,7 +23,7 @@ export function PricingHero() {
     <section className="relative overflow-hidden">
       {/* soft brand aura */}
       <div className="pointer-events-none absolute inset-x-0 -top-40 h-[36rem] bg-[radial-gradient(60%_60%_at_50%_0%,rgb(var(--brand)/0.10),transparent_70%)]" />
-      <div className="bg-dotgrid-ink pointer-events-none absolute inset-0 opacity-40" />
+      <div className="bg-blueprint mask-fade-b pointer-events-none absolute inset-0 opacity-60" />
 
       <div className="container-x relative grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
         {/* Copy */}
@@ -196,7 +196,7 @@ function BuildRow({
     tint === "brand"
       ? "bg-brand-soft text-brand"
       : tint === "hours"
-      ? "bg-hours-soft text-[rgb(200,120,10)]"
+      ? "bg-hours-soft text-hours"
       : "bg-active-soft text-active";
 
   return (

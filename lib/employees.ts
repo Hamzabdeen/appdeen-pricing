@@ -47,7 +47,7 @@ export const EMPLOYEES: Employee[] = [
     name: "Sarah",
     role: "AI Sales Employee",
     category: "Sales",
-    accent: "#5C48F6",
+    accent: "#3C8EFF",
     status: "Ready to Hire",
     tagline: "Your always-on sales development rep",
     shortDescription:
@@ -91,7 +91,7 @@ export const EMPLOYEES: Employee[] = [
     name: "Omar",
     role: "AI Customer Support Employee",
     category: "Support",
-    accent: "#0EA5A5",
+    accent: "#22D3EE",
     status: "Popular",
     tagline: "Fast, friendly support that never sleeps",
     shortDescription:
@@ -135,7 +135,7 @@ export const EMPLOYEES: Employee[] = [
     name: "Layla",
     role: "AI Marketing Employee",
     category: "Marketing",
-    accent: "#E4478D",
+    accent: "#8B5CF6",
     status: "Ready to Hire",
     tagline: "A content engine that stays on brand",
     shortDescription:
@@ -178,7 +178,7 @@ export const EMPLOYEES: Employee[] = [
     name: "Adam",
     role: "AI HR Employee",
     category: "People / HR",
-    accent: "#F09E28",
+    accent: "#38BDF8",
     status: "New",
     tagline: "People operations, handled with care",
     shortDescription:
@@ -221,7 +221,7 @@ export const EMPLOYEES: Employee[] = [
     name: "William",
     role: "AI Legal Employee",
     category: "Legal",
-    accent: "#3B7DD8",
+    accent: "#6366F1",
     status: "Ready to Hire",
     tagline: "A first pass on everyday legal work",
     shortDescription:
@@ -264,7 +264,7 @@ export const EMPLOYEES: Employee[] = [
     name: "Noor",
     role: "AI Operations Employee",
     category: "Operations",
-    accent: "#16A36E",
+    accent: "#2DD4BF",
     status: "Beta",
     tagline: "The glue that keeps work moving",
     shortDescription:

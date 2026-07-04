@@ -347,7 +347,7 @@ export default function EmployeeProfile({
             <div className="mt-4 rounded-3xl border border-line bg-canvas p-5">
               <div className="flex items-center gap-2 text-sm font-semibold text-heading">
                 <Shield className="h-4 w-4 text-active" />
-                Backed by the Appdeen guarantee
+                Backed by the AppDeen guarantee
               </div>
               <p className="mt-2 text-xs leading-relaxed text-muted">
                 Not the right fit? Pause or swap {employee.name} anytime. Your

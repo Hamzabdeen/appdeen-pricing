@@ -37,7 +37,7 @@ export function ActivationBox({ employee }: { employee: Employee }) {
     t === "brand"
       ? "bg-brand-soft text-brand"
       : t === "hours"
-      ? "bg-hours-soft text-[rgb(200,120,10)]"
+      ? "bg-hours-soft text-hours"
       : "bg-active-soft text-active";
 
   return (
@@ -73,7 +73,7 @@ export function ActivationBox({ employee }: { employee: Employee }) {
                 <span className="font-normal text-faint">{r.valueSub}</span>
               </p>
               {"note" in r && r.note && (
-                <p className="text-[0.7rem] font-medium text-[rgb(200,120,10)]">
+                <p className="text-[0.7rem] font-medium text-hours">
                   {r.note}
                 </p>
               )}

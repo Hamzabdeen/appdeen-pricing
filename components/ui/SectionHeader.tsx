@@ -25,15 +25,7 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <span
-          className={cn(
-            "eyebrow",
-            onInk && "text-hours"
-          )}
-        >
-          <span className="h-1 w-1 rounded-full bg-current" />
-          {eyebrow}
-        </span>
+        <span className={cn("eyebrow", onInk && "text-hours")}>{eyebrow}</span>
       )}
       <h2
         className={cn(

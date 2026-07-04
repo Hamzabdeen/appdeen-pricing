@@ -9,7 +9,7 @@ import { EMPLOYEES } from "@/lib/employees";
 export const metadata: Metadata = {
   title: "AI Employees — Hire or Build Your Workforce",
   description:
-    "Browse ready-to-use Appdeen AI employees for sales, support, marketing, HR and more — or build your own. Each one needs a slot and shares your work-hour pool.",
+    "Browse ready-to-use AppDeen AI employees for sales, support, marketing, HR and more — or build your own. Each one needs a slot and shares your work-hour pool.",
 };
 
 const stats = [
@@ -28,7 +28,7 @@ export default function EmployeesPage() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <span className="chip mx-auto">
               <span className="flex h-1.5 w-1.5 rounded-full bg-active" />
-              The Appdeen AI workforce
+              The AppDeen AI workforce
             </span>
             <h1 className="display-1 mt-6 text-balance">
               Meet your next <span className="text-brand">AI employees</span>
@@ -77,10 +77,7 @@ export default function EmployeesPage() {
             <div className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-brand/25 blur-[100px]" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
               <div>
-                <span className="eyebrow text-hours">
-                  <span className="h-1 w-1 rounded-full bg-current" />
-                  Build your own
-                </span>
+                <span className="eyebrow text-hours">Build your own</span>
                 <h2 className="display-2 mt-4 max-w-xl text-white text-balance">
                   Can’t find the right role? Build a custom AI employee.
                 </h2>

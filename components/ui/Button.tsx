@@ -6,11 +6,11 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-brand text-white shadow-[0_10px_30px_-10px_rgb(var(--brand)/0.7)] hover:brightness-[1.06] hover:-translate-y-0.5 active:translate-y-0",
+    "bg-gradient-brand text-white shadow-glow-sm ring-1 ring-inset ring-white/15 hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0",
   secondary:
-    "bg-surface text-heading border border-line hover:border-brand/40 hover:bg-brand-soft/40 hover:-translate-y-0.5",
+    "bg-white/[0.04] text-heading border border-line hover:border-brand/50 hover:bg-white/[0.07] hover:-translate-y-0.5 backdrop-blur",
   ghost:
-    "text-heading hover:bg-ink/5",
+    "text-body hover:bg-white/[0.06] hover:text-heading",
   onInk:
     "bg-white text-ink hover:bg-white/90 hover:-translate-y-0.5",
   onInkGhost:

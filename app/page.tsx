@@ -31,7 +31,7 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-x-0 -top-40 h-[38rem] bg-[radial-gradient(55%_55%_at_50%_0%,rgb(var(--brand)/0.12),transparent_70%)]" />
-        <div className="bg-dotgrid-ink pointer-events-none absolute inset-0 opacity-40" />
+        <div className="bg-blueprint mask-fade-b pointer-events-none absolute inset-0 opacity-60" />
 
         <div className="container-x relative py-16 text-center sm:py-24">
           <Reveal className="flex flex-col items-center">
@@ -45,7 +45,7 @@ export default function HomePage() {
               <span className="text-brand">real work hours</span>.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted text-pretty">
-              Appdeen lets companies hire ready-to-use AI employees or build
+              AppDeen lets companies hire ready-to-use AI employees or build
               their own — then give their AI workforce the hours they need to get
               real work done. No tokens. No credits. Just work hours, like real
               staff.
@@ -122,7 +122,7 @@ export default function HomePage() {
                   layer.accent === "brand"
                     ? "bg-brand-soft text-brand"
                     : layer.accent === "hours"
-                    ? "bg-hours-soft text-[rgb(200,120,10)]"
+                    ? "bg-hours-soft text-hours"
                     : "bg-active-soft text-active"
                 }`}
               >

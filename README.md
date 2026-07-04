@@ -1,6 +1,6 @@
-# Appdeen AI — Pricing, Marketplace & Employee Profiles
+# AppDeen AI — Pricing, Marketplace & Employee Profiles
 
-Production-quality marketing pages for **Appdeen AI**, the platform where
+Production-quality marketing pages for **AppDeen AI**, the platform where
 companies hire ready-to-use AI employees or build their own — and pay for
 **work hours**, not tokens.
 
@@ -35,7 +35,7 @@ Every AI employee is assembled from three simple layers:
   Add or edit employees; the marketplace, profiles, and related sections
   update automatically. Swap for a real API later.
 
-## Re-skinning to the exact Appdeen brand
+## Re-skinning to the exact AppDeen brand
 
 The entire palette is driven by CSS variables in **one place**:
 [`app/globals.css`](app/globals.css) (`:root`). Replace the RGB channel values
@@ -43,9 +43,10 @@ The entire palette is driven by CSS variables in **one place**:
 component edits required. Radii, shadows, and fonts live in
 [`tailwind.config.ts`](tailwind.config.ts).
 
-> Note: the design uses a tokenized default palette (iris/violet brand + warm
-> "work-hours" accent). Point the tokens at the official Appdeen values to
-> match the live site pixel-for-pixel.
+> The palette is tuned to the live AppDeen AI identity: a deep navy-black
+> canvas with an electric-blue gradient accent (`--brand`), the floating pill
+> navbar, corner-bracket card frames, and glow. Adjust the `--brand-*` channels
+> to fine-tune the exact blue.
 
 ## Reusable components
 

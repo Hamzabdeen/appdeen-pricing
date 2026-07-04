@@ -6,40 +6,46 @@
  * ─────────────────────────────────────────────────────────────
  *  APPDEEN AI — BRAND TOKENS  (single source of truth)
  * ─────────────────────────────────────────────────────────────
- *  Colors are stored as space-separated RGB channels so Tailwind
- *  can apply opacity (`text-brand/60`). To match the real Appdeen
- *  AI palette, replace the three channel numbers on each line.
+ *  Matched to the live AppDeen AI identity: deep navy-black canvas
+ *  with an electric-blue gradient accent. Colors are stored as
+ *  space-separated RGB channels so Tailwind can apply opacity
+ *  (`text-brand/60`). Change the channels to re-tune the palette.
  * ─────────────────────────────────────────────────────────────
  */
 :root {
-  /* Surfaces */
-  --canvas: 251 251 249; /* #FBFBF9 warm off-white page */
-  --surface: 255 255 255; /* #FFFFFF cards */
-  --elevated: 255 255 255;
-  --ink: 12 13 22; /* #0C0D16 near-black bands */
-  --ink-soft: 22 23 36; /* #161724 */
+  color-scheme: dark;
+
+  /* Surfaces — deep navy-black */
+  --canvas: 6 9 17; /* #060911 page */
+  --surface: 13 18 31; /* #0D121F cards */
+  --elevated: 18 25 42; /* #12192A raised */
+  --ink: 3 6 12; /* #03060C deepest band */
+  --ink-soft: 9 13 24; /* #090D18 */
 
   /* Text */
-  --heading: 15 16 28; /* #0F101C */
-  --body: 60 63 82; /* #3C3F52 */
-  --muted: 106 110 130; /* #6A6E82 */
-  --faint: 150 154 170; /* #969AAA */
+  --heading: 244 247 255; /* #F4F7FF near-white */
+  --body: 171 181 201; /* #ABB5C9 */
+  --muted: 124 135 158; /* #7C879E */
+  --faint: 86 97 122; /* #56617A */
 
-  /* Brand — iris / violet (platform, build, trust) */
-  --brand: 92 72 246; /* #5C48F6 */
-  --brand-soft: 238 236 254; /* #EEECFE tint */
-  --brand-ink: 43 30 138; /* deep violet text on tint */
+  /* Brand — electric blue */
+  --brand: 60 142 255; /* #3C8EFF */
+  --brand-bright: 108 176 255; /* #6CB0FF light stop */
+  --brand-deep: 31 99 240; /* #1F63F0 deep stop */
+  --brand-soft: 20 33 62; /* #14213E chip fill on dark */
+  --brand-ink: 150 196 255; /* #96C4FF text on dark tint */
 
-  /* Work-hours — warm amber (energy, time, effort) */
-  --hours: 240 158 40; /* #F09E28 */
-  --hours-soft: 254 244 227; /* #FEF4E3 */
+  /* Work-hours — brighter cyan-blue (energy / time) */
+  --hours: 56 189 248; /* #38BDF8 */
+  --hours-soft: 14 34 54; /* #0E2236 */
 
   /* Active / ready status — emerald */
-  --active: 22 163 110; /* #16A36E */
-  --active-soft: 224 245 236; /* #E0F5EC */
+  --active: 61 214 140; /* #3DD68C */
+  --active-soft: 14 40 30; /* #0E281E */
 
   /* Hairlines */
-  --line: 232 231 227; /* #E8E7E3 */
+  --line: 31 41 63; /* #1F293F */
+  --line-soft: 24 32 50;
 
   /* Typography */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
@@ -75,8 +81,8 @@
   }
 
   ::selection {
-    background-color: rgb(var(--brand) / 0.16);
-    color: rgb(var(--heading));
+    background-color: rgb(var(--brand) / 0.3);
+    color: white;
   }
 }
 
@@ -86,23 +92,27 @@
     @apply mx-auto w-full max-w-content px-5 sm:px-8;
   }
 
-  /* Eyebrow / section label */
+  /* Eyebrow / section label — "— LABEL" */
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand;
+    @apply inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-ink;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-6 bg-brand/70;
   }
 
   /* Fluid display type */
   .display-1 {
-    font-size: clamp(2.6rem, 5.6vw, 4.6rem);
-    line-height: 1.02;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.7rem, 5.8vw, 4.8rem);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
     font-weight: 650;
   }
   .display-2 {
-    font-size: clamp(2rem, 3.8vw, 3.1rem);
-    line-height: 1.06;
-    letter-spacing: -0.028em;
-    font-weight: 600;
+    font-size: clamp(2rem, 3.9vw, 3.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 620;
   }
 
   /* Card base */
@@ -112,12 +122,7 @@
 
   /* Hairline chip */
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted;
-  }
-
-  /* Gradient-free "brand glow" text for the dark hero */
-  .on-ink {
-    color: rgb(var(--canvas));
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.03] px-3 py-1 text-xs font-medium text-body backdrop-blur;
   }
 }
 
@@ -128,23 +133,48 @@
   .text-pretty {
     text-wrap: pretty;
   }
-  /* subtle dotted grid used on dark bands */
+
+  /* Electric-blue gradient text (headline accents) */
+  .text-gradient {
+    background-image: linear-gradient(
+      104deg,
+      rgb(var(--brand-bright)),
+      rgb(var(--brand))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Brand gradient fill (buttons, marks) */
+  .bg-gradient-brand {
+    background-image: linear-gradient(
+      140deg,
+      rgb(var(--brand-bright)),
+      rgb(var(--brand-deep))
+    );
+  }
+
+  /* Subtle dotted grid */
   .bg-dotgrid {
     background-image: radial-gradient(
-      rgb(255 255 255 / 0.06) 1px,
+      rgb(255 255 255 / 0.05) 1px,
       transparent 1px
     );
-    background-size: 22px 22px;
+    background-size: 24px 24px;
   }
-  .bg-dotgrid-ink {
-    background-image: radial-gradient(
-      rgb(var(--ink) / 0.05) 1px,
-      transparent 1px
-    );
-    background-size: 22px 22px;
+  /* Blueprint grid used behind cards */
+  .bg-blueprint {
+    background-image: linear-gradient(rgb(var(--brand) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--brand) / 0.06) 1px, transparent 1px);
+    background-size: 34px 34px;
   }
   .mask-fade-b {
-    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
-    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
+    mask-image: linear-gradient(to bottom, black 55%, transparent);
+  }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, black, transparent);
+    mask-image: radial-gradient(60% 60% at 50% 40%, black, transparent);
   }
 }

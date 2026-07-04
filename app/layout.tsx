@@ -5,14 +5,14 @@ import { Footer } from "@/components/site/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Appdeen AI — Hire AI Employees. Pay for Real Work Hours.",
-    template: "%s · Appdeen AI",
+    default: "AppDeen AI — Hire AI Employees. Pay for Real Work Hours.",
+    template: "%s · AppDeen AI",
   },
   description:
     "Build your own AI employee or unlock a ready-to-use one, then give your AI workforce the work hours they need to get things done.",
   metadataBase: new URL("https://www.appdeen.ai"),
   openGraph: {
-    title: "Appdeen AI — Hire AI Employees. Pay for Real Work Hours.",
+    title: "AppDeen AI — Hire AI Employees. Pay for Real Work Hours.",
     description:
       "Add a slot, pick an employee, and buy shared work hours for your whole AI workforce.",
     type: "website",
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen antialiased">
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-[4.75rem] sm:pt-[5.5rem]">{children}</main>
         <Footer />
       </body>
     </html>

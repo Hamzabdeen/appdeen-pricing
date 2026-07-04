@@ -16,10 +16,7 @@ export function EnterpriseBand() {
           <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/5 blur-3xl" />
           <div className="relative grid items-center gap-8 lg:grid-cols-[1.3fr_1fr]">
             <div>
-              <span className="eyebrow">
-                <span className="h-1 w-1 rounded-full bg-current" />
-                Enterprise
-              </span>
+              <span className="eyebrow">Enterprise</span>
               <h2 className="display-2 mt-4 max-w-xl text-balance">
                 Scaling a large AI workforce? Let’s build your plan.
               </h2>

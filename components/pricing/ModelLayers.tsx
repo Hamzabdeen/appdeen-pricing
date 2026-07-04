@@ -12,8 +12,8 @@ const tintMap: Record<string, { chip: string; icon: string; ring: string }> = {
     ring: "group-hover:border-brand/40",
   },
   hours: {
-    chip: "text-[rgb(200,120,10)]",
-    icon: "bg-hours-soft text-[rgb(200,120,10)]",
+    chip: "text-hours",
+    icon: "bg-hours-soft text-hours",
     ring: "group-hover:border-hours/50",
   },
   active: {
@@ -29,7 +29,7 @@ export function ModelLayers() {
       <SectionHeader
         eyebrow="The pricing model"
         title="Three simple layers. One clear bill."
-        description="Appdeen pricing works like building a real team — give each employee a seat, choose who they are, and buy the hours they’ll work. That’s it."
+        description="AppDeen pricing works like building a real team — give each employee a seat, choose who they are, and buy the hours they’ll work. That’s it."
       />
 
       <div className="mt-14 grid gap-5 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:items-stretch">

@@ -1,6 +1,7 @@
 import { CURRENCY, type HourPackage } from "@/lib/pricing";
 import { Button } from "@/components/ui/Button";
 import { Check, Clock, ArrowRight } from "@/components/ui/Icon";
+import { Corners } from "@/components/ui/Corners";
 import { cn } from "@/lib/utils";
 
 /** Reusable work-hour package card. Data-driven from lib/pricing.ts. */
@@ -12,12 +13,16 @@ export function PricingCard({ pkg }: { pkg: HourPackage }) {
       className={cn(
         "group relative flex h-full flex-col rounded-3xl border p-6 transition-all duration-300 sm:p-7",
         featured
-          ? "border-transparent bg-ink text-white shadow-lift"
-          : "border-line bg-surface shadow-soft hover:-translate-y-1 hover:shadow-card"
+          ? "border-brand/50 bg-elevated text-white shadow-glow ring-1 ring-brand/20"
+          : "border-line bg-surface shadow-soft hover:-translate-y-1 hover:border-brand/30 hover:shadow-card"
       )}
     >
       {featured && (
-        <div className="pointer-events-none absolute inset-0 rounded-3xl bg-dotgrid opacity-50" />
+        <>
+          <div className="pointer-events-none absolute inset-0 rounded-3xl bg-blueprint opacity-60" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-40 rounded-t-3xl bg-[radial-gradient(80%_100%_at_50%_0%,rgb(var(--brand)/0.22),transparent)]" />
+          <Corners size={16} />
+        </>
       )}
 
       {pkg.badge && (

@@ -94,7 +94,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/45 sm:flex-row">
-          <p>© {2026} Appdeen AI. All rights reserved.</p>
+          <p>© {2026} AppDeen AI. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/" className="hover:text-white/80">Privacy</Link>
             <Link href="/" className="hover:text-white/80">Terms</Link>

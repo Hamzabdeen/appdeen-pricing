@@ -6,7 +6,7 @@ import type { Config } from "tailwindcss";
  * ─────────────────────────────────────────────────────────────
  *  The entire brand is driven by CSS variables defined in
  *  app/globals.css (`:root`). To re-skin the site to the exact
- *  Appdeen AI palette, change the HEX values there — nothing in
+ *  AppDeen AI palette, change the HEX values there — nothing in
  *  the components needs to be touched.
  * ─────────────────────────────────────────────────────────────
  */
@@ -35,6 +35,8 @@ const config: Config = {
         // Brand
         brand: {
           DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          bright: "rgb(var(--brand-bright) / <alpha-value>)",
+          deep: "rgb(var(--brand-deep) / <alpha-value>)",
           soft: "rgb(var(--brand-soft) / <alpha-value>)",
           ink: "rgb(var(--brand-ink) / <alpha-value>)",
         },
@@ -61,10 +63,11 @@ const config: Config = {
         "4xl": "2.25rem",
       },
       boxShadow: {
-        soft: "0 1px 2px rgba(16,18,34,0.04), 0 4px 16px rgba(16,18,34,0.04)",
-        card: "0 1px 2px rgba(16,18,34,0.05), 0 12px 34px -12px rgba(16,18,34,0.14)",
-        lift: "0 2px 4px rgba(16,18,34,0.05), 0 24px 60px -18px rgba(16,18,34,0.22)",
-        glow: "0 20px 60px -18px rgba(var(--brand) / 0.55)",
+        soft: "0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5)",
+        card: "0 1px 2px rgba(0,0,0,0.35), 0 18px 44px -18px rgba(0,0,0,0.7)",
+        lift: "0 2px 6px rgba(0,0,0,0.4), 0 34px 70px -22px rgba(0,0,0,0.8)",
+        glow: "0 18px 50px -14px rgb(var(--brand) / 0.55)",
+        "glow-sm": "0 8px 26px -8px rgb(var(--brand) / 0.6)",
       },
       maxWidth: {
         content: "76rem",

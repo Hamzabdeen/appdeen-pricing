@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const styles: Record<EmployeeStatus, string> = {
   "Ready to Hire": "bg-active-soft text-active",
   Popular: "bg-brand-soft text-brand-ink",
-  New: "bg-hours-soft text-[rgb(180,110,10)]",
+  New: "bg-hours-soft text-hours",
   Beta: "bg-canvas text-muted border border-line",
 };
 
